@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Received | WEBooked</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eep2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5', // Primary Accent (Indigo)
+                            700: '#4338ca', // Dark Indigo
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    borderRadius: {
+                        'custom': '10px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen justify-between">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="index.html" class="font-black text-xl tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-custom bg-brand-600 flex items-center justify-center text-white">
+                    <i data-lucide="calendar-check-2" class="w-5 h-5"></i>
+                </span>
+                <span>WEBooked<span class="text-brand-600">.</span></span>
+            </a>
+            <a href="index.html" class="inline-flex items-center text-xs sm:text-sm font-semibold text-slate-700 hover:text-brand-600 transition-colors gap-1.5">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Return to Website
+            </a>
+        </div>
+    </header>
+
+    <!-- THANK YOU CONTENT SECTION -->
+    <main class="flex-grow flex items-center justify-center py-16 md:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-indigo-50/20 to-slate-50">
+        <div class="max-w-xl w-full text-center">
+            
+            <!-- Success Card -->
+            <div class="bg-white p-8 sm:p-10 rounded-custom border border-slate-200/80 shadow-xl space-y-6">
+                
+                <!-- Animated Check Badge -->
+                <div class="w-16 h-16 rounded-full bg-brand-50 text-brand-600 border border-brand-100 flex items-center justify-center mx-auto shadow-inner">
+                    <i data-lucide="party-popper" class="w-8 h-8 text-brand-600"></i>
+                </div>
+
+                <!-- Text Content -->
+                <div class="space-y-3">
+                    <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        You're all set! 🎉
+                    </h1>
+                    <p class="text-base sm:text-lg font-semibold text-brand-600">
+                        Thanks for requesting a free website consultation.
+                    </p>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed pt-1">
+                        Your request has been received successfully. We'll review your requirements and contact you soon.
+                    </p>
+                </div>
+
+                <!-- Quick Expectation Box -->
+                <div class="bg-slate-50 p-4 rounded-custom border border-slate-200/80 text-left space-y-2 text-xs sm:text-sm text-slate-600">
+                    <div class="flex items-center gap-2 text-slate-900 font-bold">
+                        <i data-lucide="clock" class="w-4 h-4 text-brand-600"></i>
+                        <span>What happens next?</span>
+                    </div>
+                    <p>
+                        We typically respond within <strong>1–2 business days</strong> with personalized insights and available times for a quick call.
+                    </p>
+                </div>
+
+                <!-- Return Button -->
+                <div class="pt-2">
+                    <a href="index.html" class="inline-flex items-center justify-center text-sm sm:text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 px-8 py-3.5 rounded-custom shadow-md hover:shadow-lg transition-all w-full sm:w-auto gap-2">
+                        <i data-lucide="home" class="w-4 h-4"></i>
+                        Return to Website
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
+            <div>
+                <span class="font-extrabold text-white tracking-wider uppercase text-sm block">WEBooked.</span>
+                <span class="text-[11px] text-slate-500">Web Design & Client Booking Studio</span>
+            </div>
+            <div class="text-xs text-slate-600 pt-2 border-t border-slate-900">
+                © 2026 WEBooked. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
