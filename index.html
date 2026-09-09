@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEBooked | Modern Web Design & Client Booking Studio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eep2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5', // Primary Accent (Indigo)
+                            700: '#4338ca', // Dark Indigo
+                            800: '#3730a3',
+                            900: '#312e81',
+                        },
+                        slate: {
+                            850: '#1e293b',
+                            900: '#0f172a',
+                            950: '#020617',
+                        }
+                    },
+                    borderRadius: {
+                        'custom': '10px',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- NAVIGATION HEADER -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <a href="#" class="font-black text-xl tracking-tight text-slate-900 flex items-center gap-2">
+                <span class="w-8 h-8 rounded-custom bg-brand-600 flex items-center justify-center text-white">
+                    <i data-lucide="calendar-check-2" class="w-5 h-5"></i>
+                </span>
+                <span>WEBooked<span class="text-brand-600">.</span></span>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#about" class="hover:text-brand-600 transition-colors">About</a>
+                <a href="#services" class="hover:text-brand-600 transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-brand-600 transition-colors">Portfolio</a>
+                <a href="#contact" class="hover:text-brand-600 transition-colors">Contact</a>
+            </nav>
+            <div>
+                <a href="#lead-form" class="inline-flex items-center text-xs sm:text-sm font-semibold text-white bg-slate-900 hover:bg-brand-600 px-4 py-2.5 rounded-custom transition-all shadow-sm">
+                    Free Consultation
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section class="py-16 md:py-24 border-b border-slate-200/60 bg-gradient-to-b from-white via-indigo-50/20 to-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold rounded-full">
+                            <span class="w-2 h-2 rounded-full bg-brand-600 animate-pulse"></span>
+                            Web Design & Client Booking Studio
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Your Business Deserves a <span class="text-brand-600">Better Website.</span>
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                            Get a free consultation and discover how a modern, high-converting website from WEBooked can help your business look more professional and turn visitors into appointments.
+                        </p>
+                        <div class="pt-2 space-y-3">
+                            <a href="#lead-form" class="inline-flex items-center justify-center text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 px-7 py-3.5 rounded-custom shadow-md hover:shadow-lg transition-all w-full sm:w-auto gap-2 group">
+                                Get a Free Consultation 
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </a>
+                            <p class="text-xs text-slate-500 font-medium">
+                                No commitment. Just a quick conversation about your website needs.
+                            </p>
+                        </div>
+                        <!-- Features Grid -->
+                        <div class="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-semibold text-slate-700 text-left border-t border-slate-200/80">
+                            <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-brand-600"></i> Mobile Friendly</div>
+                            <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-brand-600"></i> Modern Design</div>
+                            <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-brand-600"></i> Fast Loading</div>
+                            <div class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-brand-600"></i> Professional</div>
+                        </div>
+                    </div>
+
+                    <!-- Right Browser Mockup -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-slate-900 p-3 rounded-custom shadow-2xl border border-slate-800">
+                            <!-- Browser Top Bar -->
+                            <div class="flex items-center justify-between pb-3 px-2 border-b border-slate-800">
+                                <div class="flex items-center gap-1.5">
+                                    <div class="w-3 h-3 rounded-full bg-rose-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-emerald-500"></div>
+                                </div>
+                                <div class="bg-slate-800 text-slate-400 text-[10px] px-3 py-1 rounded-md font-mono">
+                                    webooked.com
+                                </div>
+                                <div class="w-8"></div>
+                            </div>
+                            <!-- Mockup Content -->
+                            <div class="bg-white rounded-b-md p-6 space-y-5 text-left mt-1">
+                                <div class="flex justify-between items-center text-xs border-b border-slate-100 pb-3">
+                                    <div class="font-bold text-slate-900 flex items-center gap-1">
+                                        <div class="w-2 h-2 rounded-full bg-brand-600"></div> WEBooked
+                                    </div>
+                                    <div class="flex gap-3 text-slate-500">
+                                        <span>About</span>
+                                        <span>Work</span>
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="text-xs font-bold text-slate-900 leading-tight">
+                                        Your Business<br>Deserves Better.
+                                    </div>
+                                    <div class="text-[10px] text-slate-500">
+                                        Modern websites for growing businesses.
+                                    </div>
+                                    <div class="pt-1">
+                                        <div class="bg-brand-600 text-white text-[10px] font-semibold py-1.5 px-3 rounded-custom inline-flex items-center gap-1">
+                                            Get Consultation <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Inner Preview Card -->
+                                <div class="bg-slate-50 p-3 rounded-custom border border-slate-200/80 flex items-center justify-between">
+                                    <div class="space-y-1">
+                                        <div class="h-2 w-16 bg-slate-300 rounded"></div>
+                                        <div class="h-2 w-24 bg-slate-200 rounded"></div>
+                                    </div>
+                                    <div class="bg-brand-100 text-brand-800 text-[9px] font-bold px-2 py-1 rounded">
+                                        PREVIEW
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. PROBLEM SECTION -->
+        <section id="about" class="py-16 md:py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                        Is Your Online Presence Holding Your Business Back?
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        Many business owners face the same digital obstacles.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Card 1 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-custom bg-amber-50 text-amber-600 flex items-center justify-center mb-4">
+                            <i data-lucide="alert-circle" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Outdated Website</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Your current website doesn't accurately represent the quality and professionalism of your business.
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-custom bg-rose-50 text-rose-600 flex items-center justify-center mb-4">
+                            <i data-lucide="smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Poor Mobile Experience</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Potential customers struggle to navigate or view your services properly when using their phones.
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="w-10 h-10 rounded-custom bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4">
+                            <i data-lucide="search-x" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Hard to Get Noticed</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Visitors can't easily find your contact details or understand what makes your offer valuable.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-10 text-center">
+                    <p class="text-slate-700 font-medium text-sm sm:text-base bg-white inline-flex items-center gap-2 px-6 py-3 rounded-custom border border-slate-200/80 shadow-sm">
+                        <i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i>
+                        <span>A good website should make your business easier to <span class="text-brand-600 font-bold">discover</span>, <span class="text-brand-600 font-bold">trust</span>, and <span class="text-brand-600 font-bold">contact</span>.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. SOLUTION SECTION -->
+        <section id="services" class="py-16 md:py-20 bg-white border-y border-slate-200/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                        Let's Build Something Better.
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm sm:text-base">
+                        WEBooked creates clean, responsive websites designed specifically around your business goals and customer needs.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-custom bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
+                            <i data-lucide="layout" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Modern Design</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            A polished, contemporary appearance that instills immediate confidence and trust in your brand.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-custom bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
+                            <i data-lucide="monitor-smartphone" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Mobile Friendly</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Fully responsive layouts that perform seamlessly on mobile phones, tablets, and desktop displays.
+                        </p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="w-10 h-10 rounded-custom bg-brand-50 text-brand-600 flex items-center justify-center mb-4">
+                            <i data-lucide="target" class="w-5 h-5"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Built for Your Business</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Tailored explicitly to your specific requirements and goals—never built using bloated, generic templates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. SIMPLE PROCESS -->
+        <section class="py-16 md:py-20 bg-slate-50">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                        Getting Started Is Simple
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm">
+                        A clear 3-step path toward your new online presence.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Step 1 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 text-center relative">
+                        <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold text-xs flex items-center justify-center mx-auto mb-3">01</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Tell Me About Your Business</h3>
+                        <p class="text-slate-600 text-sm">
+                            Fill out the short consultation form below with your details and ideas.
+                        </p>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 text-center relative">
+                        <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold text-xs flex items-center justify-center mx-auto mb-3">02</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Discuss Your Website</h3>
+                        <p class="text-slate-600 text-sm">
+                            We'll review your objectives, site functionality, and design preferences together.
+                        </p>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="bg-white p-6 rounded-custom border border-slate-200/80 text-center relative">
+                        <div class="w-8 h-8 rounded-full bg-brand-50 text-brand-600 font-bold text-xs flex items-center justify-center mx-auto mb-3">03</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Plan Your Project</h3>
+                        <p class="text-slate-600 text-sm">
+                            We'll determine site structure, requirements, timeline, and what comes next.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. PORTFOLIO / EXAMPLES -->
+        <section id="portfolio" class="py-16 md:py-20 bg-white border-t border-slate-200/60">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                        What Could Your Website Look Like?
+                    </h2>
+                    <p class="text-slate-600 mt-2 text-sm">
+                        Explore concept designs built for modern business verticals.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Project 1 -->
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-custom overflow-hidden group">
+                        <div class="h-44 bg-slate-200 flex items-center justify-center p-4 group-hover:bg-slate-300 transition-colors">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="coffee" class="w-8 h-8 text-slate-700 mb-2"></i>
+                                <span class="font-bold text-slate-700 text-sm uppercase tracking-wider">CAFE WEBSITE</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2 py-0.5 rounded">Concept Project</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-2">Artisan Coffee & Bakery</h3>
+                            <p class="text-slate-500 text-xs mt-1">Menu showcase, store locator, and online reservation interface.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-custom overflow-hidden group">
+                        <div class="h-44 bg-slate-200 flex items-center justify-center p-4 group-hover:bg-slate-300 transition-colors">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="dumbbell" class="w-8 h-8 text-slate-700 mb-2"></i>
+                                <span class="font-bold text-slate-700 text-sm uppercase tracking-wider">FITNESS WEBSITE</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2 py-0.5 rounded">Concept Project</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-2">Peak Performance Gym</h3>
+                            <p class="text-slate-500 text-xs mt-1">Class schedule integration, trainer profiles, and membership signup.</p>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="bg-slate-50 border border-slate-200/80 rounded-custom overflow-hidden group">
+                        <div class="h-44 bg-slate-200 flex items-center justify-center p-4 group-hover:bg-slate-300 transition-colors">
+                            <div class="text-center flex flex-col items-center">
+                                <i data-lucide="wrench" class="w-8 h-8 text-slate-700 mb-2"></i>
+                                <span class="font-bold text-slate-700 text-sm uppercase tracking-wider">SERVICES WEBSITE</span>
+                            </div>
+                        </div>
+                        <div class="p-4 bg-white">
+                            <span class="text-[10px] font-semibold uppercase tracking-wider text-brand-600 bg-brand-50 px-2 py-0.5 rounded">Concept Project</span>
+                            <h3 class="text-base font-bold text-slate-900 mt-2">Modern Home Consult</h3>
+                            <p class="text-slate-500 text-xs mt-1">Service listing, quote estimation calculator, and lead generation flow.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. MAIN LEAD FORM & 7. TRUST SECTION -->
+        <section id="lead-form" class="py-16 md:py-24 bg-slate-900 text-white">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Let's Talk About Your Website
+                    </h2>
+                    <p class="text-slate-400 mt-2 text-sm sm:text-base">
+                        Tell us a little about your project. The WEBooked team will review your request and get back to you promptly.
+                    </p>
+                </div>
+
+                <!-- Form Container -->
+                <div class="bg-slate-800 p-6 sm:p-8 rounded-custom border border-slate-700/80 shadow-xl">
+                    <form action="YOUR_MAKE_WEBHOOK_URL_HERE" method="POST" class="space-y-5">
+                        
+                        <div>
+                            <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Doe" 
+                                   class="w-full bg-slate-900 border border-slate-700 rounded-custom px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com" 
+                                   class="w-full bg-slate-900 border border-slate-700 rounded-custom px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label for="business" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Business Name</label>
+                            <input type="text" id="business" name="business" placeholder="Your Business or Studio Name" 
+                                   class="w-full bg-slate-900 border border-slate-700 rounded-custom px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">What do you need?</label>
+                            <select id="service" name="service" 
+                                    class="w-full bg-slate-900 border border-slate-700 rounded-custom px-4 py-3 text-sm text-white focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500 transition-all">
+                                <option value="New Website">New Website</option>
+                                <option value="Website Redesign">Website Redesign</option>
+                                <option value="Landing Page">Landing Page</option>
+                                <option value="E-commerce Website">E-commerce Website</option>
+                                <option value="Not Sure Yet">Not Sure Yet</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-3.5 px-6 rounded-custom transition-all duration-200 shadow-md hover:shadow-lg text-sm sm:text-base mt-2 flex items-center justify-center gap-2">
+                            Request My Free Consultation
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+
+                    </form>
+
+                    <!-- Trust Indicators -->
+                    <div class="mt-8 pt-6 border-t border-slate-700/80 grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500"></i> Free initial consultation
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500"></i> No obligation
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500"></i> Personalized recommendations
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="check-circle-2" class="w-4 h-4 text-brand-500"></i> Response within 1–2 business days
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FINAL CTA -->
+        <section id="contact" class="py-16 bg-white border-t border-slate-200/60 text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+                    Ready to Improve Your Online Presence?
+                </h2>
+                <p class="text-slate-600 text-sm sm:text-base max-w-xl mx-auto">
+                    Let's talk about what your business needs to reach more customers and present a professional image online.
+                </p>
+                <div class="pt-2">
+                    <a href="#lead-form" class="inline-flex items-center justify-center text-sm font-semibold text-white bg-slate-900 hover:bg-brand-600 px-6 py-3.5 rounded-custom transition-all shadow-md gap-2">
+                        Get My Free Consultation
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 9. FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+            <div>
+                <span class="font-extrabold text-white tracking-wider uppercase text-base block">WEBooked.</span>
+                <span class="text-xs text-slate-500">Web Design & Client Booking Studio</span>
+            </div>
+            
+            <nav class="flex justify-center gap-6 text-xs text-slate-400">
+                <a href="#about" class="hover:text-white transition-colors">About</a>
+                <a href="#services" class="hover:text-white transition-colors">Services</a>
+                <a href="#portfolio" class="hover:text-white transition-colors">Portfolio</a>
+                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+            </nav>
+
+            <div class="text-xs text-slate-600 pt-4 border-t border-slate-900">
+                © 2026 WEBooked. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
