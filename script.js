@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = Object.fromEntries(formData.entries());
 
         // Get webhook URL from the form action attribute
-        const webhookUrl = typeof WEBHOOK_URL !== 'undefined' ? WEBHOOK_URL : '';
+        const webhookUrl = '/api/submit';
 
         try {
             const response = await fetch(webhookUrl, {

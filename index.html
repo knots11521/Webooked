@@ -380,7 +380,10 @@
                 <!-- Form Container -->
                 <div class="bg-slate-800 p-6 sm:p-8 rounded-custom border border-slate-700/80 shadow-xl">
                     <form action="" method="POST" class="space-y-5">
-                        
+                        <div class="hidden" aria-hidden="true">
+                            <label for="website">Leave this field empty</label>
+                            <input type="text" id="website" name="honeypot" tabindex="-1" autocomplete="off" class="hidden">
+                        </div>
                         <div>
                             <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-1.5">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe" 
@@ -481,7 +484,6 @@
     <script>
         lucide.createIcons();
     </script>
-    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

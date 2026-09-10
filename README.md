@@ -1,10 +1,17 @@
 # WEBooked
 
-Modern web design and client booking studio landing page with a lead generation form.
+Modern web design and client booking studio landing page with a lead generation form that submits to a Make.com webhook via a secure serverless function proxy.
 
 ## Overview
 
-A responsive single-page landing site built with Tailwind CSS featuring a consultation form that submits to a Make.com (Integromat) webhook.
+A responsive single-page landing site built with Tailwind CSS featuring a consultation form. The form submits to a Vercel serverless function (`/api/submit`) that validates input, checks for spam, and forwards the data to your Make.com webhook — keeping the webhook URL hidden from the client.
+
+## Security features
+
+- **Webhook URL never exposed to the browser** — stays server-side in Vercel Environment Variables
+- **Honeypot anti-spam field** — hidden field that bots fill in but humans can't see
+- **Server-side validation** — required fields, email format, and input length checks
+- **Error masking** — generic error messages that don't leak server internals
 
 ## Setup
 
@@ -29,48 +36,48 @@ Add your Make.com webhook URL:
 WEBHOOK_URL=https://hook.us2.make.com/your-webhook-id-here
 ```
 
-### 3. Generate config.js
-
-The `.env` file is git-ignored. Run the build script to generate `config.js` (also git-ignored) which contains the webhook URL as a JavaScript constant:
-
-```bash
-node build.js
-```
-
-> On Vercel, this step runs automatically during deployment.
-
-### 4. Open locally
-
-Open `index.html` in your browser. The form submits via `fetch()` to the webhook URL defined in `config.js`.
-
-## Deployment (Vercel)
+### 3. Deploy to Vercel
 
 1. Push to GitHub.
 2. Import the project in [Vercel](https://vercel.com/new).
 3. In **Project Settings → Environment Variables**, add:
 
-   | Name | Value |
-   |------|-------|
-   | `WEBHOOK_URL` | `https://hook.us2.make.com/your-webhook-id` |
+   | Name | Value | Environment |
+   |------|-------|-------------|
+   | `WEBHOOK_URL` | `https://hook.us2.make.com/your-webhook-id` | Production, Preview, Development |
 
-4. Deploy. Vercel runs `npm run build` (executes `build.js`) which generates `config.js` from the environment variable.
+4. Deploy.
+
+For local testing, install the [Vercel CLI](https://vercel.com/docs/cli) and run `vercel dev` — it loads `.env` automatically.
 
 ## How the form works
 
-- The HTML `<form>` has `action=""` (intentionally empty).
-- `script.js` intercepts the submit event, collects form data, and sends it via `fetch()` to the `WEBHOOK_URL` from `config.js`.
-- On success, the user is redirected to `thank-you.html`.
-- On failure, an error alert is shown and the submit button is restored.
+1. User fills in the form (name, email, business, service).
+2. `script.js` intercepts the submit and sends the data via `fetch()` to `/api/submit`.
+3. `api/submit.js` (serverless function) validates the data and checks the honeypot field.
+4. On validation success, the webhook URL from `WEBHOOK_URL` env var is used to forward the data.
+5. On success, the user is redirected to `thank-you.html`.
 
-## Files
+## Project structure
 
-| File | Description |
-|------|-------------|
-| `index.html` | Landing page markup |
-| `script.js` | Form submission logic (reads `WEBHOOK_URL` from `config.js`) |
-| `build.js` | Generates `config.js` from `.env` or Vercel env vars |
-| `vercel.json` | Vercel static-build configuration |
-| `package.json` | Build script for `npm run build` |
-| `.env` | Local environment variables (git-ignored) |
-| `.env.example` | Example environment template (git-ignored) |
-| `config.js` | Generated at build time from env vars (git-ignored) |
+```
+├── index.html          # Landing page with lead form
+├── script.js           # Client-side form submission logic
+├── api/
+│   └── submit.js       # Vercel serverless function (validation + webhook proxy)
+├── thank-you.html      # Thank you page
+├── package.json        # Project metadata
+└── .env.example        # Example environment template (git-ignored)
+```
+
+## Development
+
+```bash
+# Install Vercel CLI
+npm install -g vercel
+
+# Run locally (serves static files + serverless function)
+vercel dev
+```
+
+Visit `http://localhost:3000` to test the form locally.
