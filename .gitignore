@@ -7,3 +7,12 @@ config.js
 
 # Dependencies
 node_modules
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Kilo
+.kilo/
