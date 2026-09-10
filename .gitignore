@@ -1,3 +1,9 @@
 # Environment files
 .env
 .env.example
+
+# Local config (contains secrets)
+config.js
+
+# Dependencies
+node_modules
